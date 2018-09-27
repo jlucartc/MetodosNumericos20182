@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 from sympy import*
 
 import math
 
 import time
 
-import matplotlib.pyplot as plt #plot
+#import matplotlib.pyplot as plt #plot
 
 x = symbols('x')
 
@@ -26,7 +27,14 @@ c = 0 # inicia contador de iterações
 start = time.time()
 end = 0
 
+str_k = 'k'
+str_x = 'x'
+str_fx = 'f(x)'
+
+print("\n{0:^2}".format(str_k) + "|{0:^14}".format(str_x) + "|{0:^14}".format(str_fx))
+
 while (c < 30) :
+    print("{0:^2}".format(c) + "|{0:^14.6e}".format(x0) + "|{0:^14.6e}".format(fx.subs(x,x0)))
 
     phi = phix(x0,fx,dfx) # calcula phi(x0)
 
@@ -39,15 +47,13 @@ while (c < 30) :
         break # sai do laço
 
     x0 = phi # caso f(x) não seja perto de 0 o suficiente, x0 recebe o valor de phi(x0) e segue no laço
-    
+
     if(c == 29):
 
         end = time.time() # calcula tempo final
-        
+
         print("-> Número máximo de iterações atingido")
-    
+
     c+=1
 
 print("-> Tempo de execução: "+str(end - start)+" segundos\n\n") # imprime o tempo de execução na tela
-
-
