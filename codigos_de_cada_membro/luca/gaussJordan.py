@@ -70,6 +70,7 @@ else:
 
       print("Resultado por eliminação de Gauss-Jordan: \n\n")
       print(gaussJordan[2])
+      print(gaussJordan[0])
 
 
 
